@@ -1,0 +1,45 @@
+{
+  "name": "@dendra-science/wait-for-mongo-cli",
+  "version": "0.0.1",
+  "description": "Wait for Mongo command line interface tool.",
+  "license": "BSD-2-Clause-FreeBSD",
+  "author": "J. Scott Smith <scott@newleafsolutionsinc.com>",
+  "bin": {
+    "wait-for-mongo": "./dist/wait-for-mongo.js"
+  },
+  "main": "dist/wait-for-mongo.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DendraScience/wait-for-mongo-cli.git"
+  },
+  "scripts": {
+    "babel": "babel src -d dist",
+    "build": "npm run lint && npm run clean && npm run babel && npm run chmod",
+    "chmod": "chmod +x dist/wait-for-mongo.js",
+    "clean": "rm -rf dist/*",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=6.11.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "mongodb": "^2.2.33",
+    "mri": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.12.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^1.0.0"
+  }
+}
